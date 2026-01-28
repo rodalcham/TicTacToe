@@ -15,6 +15,15 @@ def registerInput(currentPlayer, board):
         if move < 1 or move > 9:
             print("Number must be 1-9!")
             continue
+                row = (move - 1) // 3
+        col = (move - 1) % 3
+        print("Row:", row, "Col:", col)
+                if board[row][col] == ' ':
+            return (row, col)
+            else:
+                print("Spot already taken! Try again.")
+
+
         break 
 
     return 
