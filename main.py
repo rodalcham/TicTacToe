@@ -12,6 +12,9 @@ def registerInput(currentPlayer, board):
     while True:
         move = int(input(f"{currentPlayer['symbol']}'s turn. Choose a position (1-9): "))
         print("You entered:", move)
+        if move < 1 or move > 9:
+            print("Number must be 1-9!")
+            continue
         break 
 
     return 
