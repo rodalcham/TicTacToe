@@ -17,12 +17,17 @@ player2 = {'turn': -1, 'symbol': 'O'}
 # BOARD DISPLAY AND INPUT
 # ============================================================================
 
-def printBoard():
-	print(f"1 | 2 | 3          {board[0][0]} | {board[0][1]} | {board[0][2]}")
-	print("---------          ---------")
-	print(f"4 | 5 | 6          {board[1][0]} | {board[1][1]} | {board[1][2]}")
-	print("---------          ---------")
-	print(f"7 | 8 | 9          {board[2][0]} | {board[2][1]} | {board[2][2]}")
+def printBoard():3
+    def get_cell_display(row, col):
+        if board[row][col] == ' ':
+            return str((row * 3) + col + 1)
+        return board[row][col]
+
+    print(f" {get_cell_display(0, 0)} | {get_cell_display(0, 1)} | {get_cell_display(0, 2)}")
+    print("-----------")
+    print(f" {get_cell_display(1, 0)} | {get_cell_display(1, 1)} | {get_cell_display(1, 2)}")
+    print("-----------")
+    print(f" {get_cell_display(2, 0)} | {get_cell_display(2, 1)} | {get_cell_display(2, 2)}")
 
 
 def registerInput(currentPlayer, board):
